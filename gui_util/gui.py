@@ -39,3 +39,11 @@ def get_recent_windows(exclude, limit):
         windows_result = windows_result[:10]
 
     return windows_result
+
+
+def get_recent_window(exclude):
+
+    recent_windows = get_recent_windows(exclude=exclude, limit=1)
+    recent_window = recent_windows[0]
+
+    return recent_window

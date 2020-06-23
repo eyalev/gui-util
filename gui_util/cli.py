@@ -26,6 +26,14 @@ def recent_windows(exclude, limit):
 
 
 @cli.command()
+@click.option('--exclude')
+def recent_window(exclude):
+    recent_window_result = gui.get_recent_window(exclude=exclude)
+    print(recent_window_result)
+    return True
+
+
+@cli.command()
 def focus_on_window():
     print('[START]')
     gui.focus_on_window('chrome')
